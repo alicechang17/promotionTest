@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		08FAB61D2798595A00850ED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB61C2798595A00850ED6 /* AppDelegate.swift */; };
 		08FAB61F2798595A00850ED6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB61E2798595A00850ED6 /* SceneDelegate.swift */; };
-		08FAB6212798595A00850ED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB6202798595A00850ED6 /* ViewController.swift */; };
+		08FAB6212798595A00850ED6 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB6202798595A00850ED6 /* AlbumsViewController.swift */; };
 		08FAB6242798595A00850ED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08FAB6222798595A00850ED6 /* Main.storyboard */; };
 		08FAB6262798595C00850ED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FAB6252798595C00850ED6 /* Assets.xcassets */; };
 		08FAB6292798595C00850ED6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08FAB6272798595C00850ED6 /* LaunchScreen.storyboard */; };
 		08FAB6342798595D00850ED6 /* promotionAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB6332798595D00850ED6 /* promotionAreaTests.swift */; };
 		08FAB63F2798595D00850ED6 /* promotionAreaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB63E2798595D00850ED6 /* promotionAreaUITests.swift */; };
+		08FAB64D279859CA00850ED6 /* AlbumItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB64C279859CA00850ED6 /* AlbumItem.swift */; };
+		08FAB64F279859FA00850ED6 /* AlbumItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB64E279859FA00850ED6 /* AlbumItemCell.swift */; };
+		08FAB65127985A1800850ED6 /* FeaturedAlbumItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB65027985A1800850ED6 /* FeaturedAlbumItemCell.swift */; };
+		08FAB65327985A3700850ED6 /* SharedAlbumItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB65227985A3700850ED6 /* SharedAlbumItemCell.swift */; };
+		08FAB65527985A5A00850ED6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB65427985A5A00850ED6 /* HeaderView.swift */; };
+		08FAB65727985CFD00850ED6 /* PhotoData.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 08FAB65627985CFD00850ED6 /* PhotoData.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +44,7 @@
 		08FAB6192798595A00850ED6 /* promotionArea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = promotionArea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FAB61C2798595A00850ED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08FAB61E2798595A00850ED6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		08FAB6202798595A00850ED6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		08FAB6202798595A00850ED6 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		08FAB6232798595A00850ED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08FAB6252798595C00850ED6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08FAB6282798595C00850ED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		08FAB63A2798595D00850ED6 /* promotionAreaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = promotionAreaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FAB63E2798595D00850ED6 /* promotionAreaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = promotionAreaUITests.swift; sourceTree = "<group>"; };
 		08FAB6402798595D00850ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08FAB64C279859CA00850ED6 /* AlbumItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumItem.swift; sourceTree = "<group>"; };
+		08FAB64E279859FA00850ED6 /* AlbumItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumItemCell.swift; sourceTree = "<group>"; };
+		08FAB65027985A1800850ED6 /* FeaturedAlbumItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedAlbumItemCell.swift; sourceTree = "<group>"; };
+		08FAB65227985A3700850ED6 /* SharedAlbumItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAlbumItemCell.swift; sourceTree = "<group>"; };
+		08FAB65427985A5A00850ED6 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		08FAB65627985CFD00850ED6 /* PhotoData.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PhotoData.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +91,7 @@
 		08FAB6102798595A00850ED6 = {
 			isa = PBXGroup;
 			children = (
+				08FAB65627985CFD00850ED6 /* PhotoData.bundle */,
 				08FAB61B2798595A00850ED6 /* promotionArea */,
 				08FAB6322798595D00850ED6 /* promotionAreaTests */,
 				08FAB63D2798595D00850ED6 /* promotionAreaUITests */,
@@ -101,11 +114,16 @@
 			children = (
 				08FAB61C2798595A00850ED6 /* AppDelegate.swift */,
 				08FAB61E2798595A00850ED6 /* SceneDelegate.swift */,
-				08FAB6202798595A00850ED6 /* ViewController.swift */,
+				08FAB6202798595A00850ED6 /* AlbumsViewController.swift */,
 				08FAB6222798595A00850ED6 /* Main.storyboard */,
 				08FAB6252798595C00850ED6 /* Assets.xcassets */,
 				08FAB6272798595C00850ED6 /* LaunchScreen.storyboard */,
 				08FAB62A2798595C00850ED6 /* Info.plist */,
+				08FAB64C279859CA00850ED6 /* AlbumItem.swift */,
+				08FAB64E279859FA00850ED6 /* AlbumItemCell.swift */,
+				08FAB65027985A1800850ED6 /* FeaturedAlbumItemCell.swift */,
+				08FAB65227985A3700850ED6 /* SharedAlbumItemCell.swift */,
+				08FAB65427985A5A00850ED6 /* HeaderView.swift */,
 			);
 			path = promotionArea;
 			sourceTree = "<group>";
@@ -231,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08FAB65727985CFD00850ED6 /* PhotoData.bundle in Resources */,
 				08FAB6292798595C00850ED6 /* LaunchScreen.storyboard in Resources */,
 				08FAB6262798595C00850ED6 /* Assets.xcassets in Resources */,
 				08FAB6242798595A00850ED6 /* Main.storyboard in Resources */,
@@ -258,9 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08FAB6212798595A00850ED6 /* ViewController.swift in Sources */,
+				08FAB6212798595A00850ED6 /* AlbumsViewController.swift in Sources */,
 				08FAB61D2798595A00850ED6 /* AppDelegate.swift in Sources */,
+				08FAB65127985A1800850ED6 /* FeaturedAlbumItemCell.swift in Sources */,
+				08FAB64D279859CA00850ED6 /* AlbumItem.swift in Sources */,
+				08FAB65327985A3700850ED6 /* SharedAlbumItemCell.swift in Sources */,
+				08FAB64F279859FA00850ED6 /* AlbumItemCell.swift in Sources */,
 				08FAB61F2798595A00850ED6 /* SceneDelegate.swift in Sources */,
+				08FAB65527985A5A00850ED6 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

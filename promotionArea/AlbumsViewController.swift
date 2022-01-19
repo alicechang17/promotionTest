@@ -210,8 +210,8 @@ extension AlbumsViewController {
             snapshot.appendSections([0])
             snapshot.appendItems(allAlbumsInBaseDirectory)
         } else {
-            setUpTempAlbumsInBaseDirectory()
-            func setUpTempAlbumsInBaseDirectory() {
+            setUpSeparateAllAlbums()
+            func setUpSeparateAllAlbums() {
                 for (index, album) in allAlbumsInBaseDirectory.enumerated() {
                     if let first = promotionAreasIndex.first, index < first {
                         tempAlbumItems.append(album)

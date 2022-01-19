@@ -202,8 +202,8 @@ extension AlbumsViewController {
                               promotionArea(type: "category", name: "music", index:14),]
         var promotionAreasIndex: [Int] = []
         promotionAreas.forEach { promotionAreasIndex.append($0.index)}
-        var separateAllAlbumsInBaseDirectory:[[AlbumItem]] = []
-        var tempDirectory:[AlbumItem] = []
+        var separateAllAlbums:[[AlbumItem]] = []
+        var tempAlbumItems:[AlbumItem] = []
         
         if promotionAreas.count == 0 {
             selectSection.append(Section.myAlbums)
@@ -214,24 +214,24 @@ extension AlbumsViewController {
             func setUpTempAlbumsInBaseDirectory() {
                 for (index, album) in allAlbumsInBaseDirectory.enumerated() {
                     if let first = promotionAreasIndex.first, index < first {
-                        tempDirectory.append(album)
+                        tempAlbumItems.append(album)
                     } else if let first = promotionAreasIndex.first, index == first {
-                        if !tempDirectory.isEmpty {
-                            separateAllAlbumsInBaseDirectory.append(tempDirectory)
+                        if !tempAlbumItems.isEmpty {
+                            separateAllAlbums.append(tempAlbumItems)
                         }
-                        tempDirectory = []
+                        tempAlbumItems = []
                         promotionAreasIndex.removeFirst()
-                        tempDirectory.append(album)
+                        tempAlbumItems.append(album)
                     } else if promotionAreasIndex.count == 0 && allAlbumsInBaseDirectory.count == index + 1 {
-                        separateAllAlbumsInBaseDirectory.append(tempDirectory)
+                        separateAllAlbums.append(tempAlbumItems)
                     } else if promotionAreasIndex.count == 0 {
-                        tempDirectory.append(album)
+                        tempAlbumItems.append(album)
                     }
                 }
             }
             
             
-            for (index, _) in separateAllAlbumsInBaseDirectory.enumerated() {
+            for (index, _) in separateAllAlbums.enumerated() {
                 if promotionAreas.first?.index == 0 {
                     addCategoryAndBannerSection(index: index)
                     addMyAlbums(index: index)
@@ -258,7 +258,7 @@ extension AlbumsViewController {
             func addMyAlbums(index: Int) {
                 selectSection.append(Section.myAlbums)
                 snapshot.appendSections([index+10])
-                snapshot.appendItems(separateAllAlbumsInBaseDirectory[index])
+                snapshot.appendItems(separateAllAlbums[index])
             }
         }
         

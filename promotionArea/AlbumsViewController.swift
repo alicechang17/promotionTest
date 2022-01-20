@@ -248,7 +248,7 @@ extension AlbumsViewController {
                         selectSection.append(Section.sharedAlbums)
                         snapshot.appendSections([index+100])
                         snapshot.appendItems(albumsInBaseDirectory())
-                    } else {
+                    } else if promotionAreas[index].type == "banner"{
                         selectSection.append(Section.featuredAlbums)
                         snapshot.appendSections([index+200])
                         snapshot.appendItems(albumsInBaseDirectory())

@@ -257,9 +257,9 @@ extension AlbumsViewController {
             }
             
             func addMyAlbums(index: Int) {
-                selectSection.append(Section.myAlbums)
-                snapshot.appendSections([UUID().uuidString])
-                snapshot.appendItems(separateAllAlbums[index])
+                selectSection.append(Section.myAlbums) // Different section for layout(Section enum)
+                snapshot.appendSections([UUID().uuidString]) // Must have unique identifiers, TBD
+                snapshot.appendItems(separateAllAlbums[index]) // Add items content
             }
         }
         

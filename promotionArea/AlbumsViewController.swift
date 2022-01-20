@@ -196,7 +196,7 @@ extension AlbumsViewController {
     func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<Int, AlbumItem> {
         var snapshot = NSDiffableDataSourceSnapshot<Int, AlbumItem>()
         let allAlbumsInBaseDirectory = albumsInBaseDirectory() + albumsInBaseDirectory() + albumsInBaseDirectory() + albumsInBaseDirectory()
-        let promotionAreas = [promotionArea(type: "category", name: "game", index:2),
+        let promotionAreas = [promotionArea(type: "category", name: "game", index:0),
                               promotionArea(type: "banner", name: "music", index:8),
                               promotionArea(type: "banner", name: "music", index:12),
                               promotionArea(type: "category", name: "music", index:14),]
@@ -223,6 +223,7 @@ extension AlbumsViewController {
                         promotionAreasIndex.removeFirst()
                         tempAlbumItems.append(album)
                     } else if promotionAreasIndex.count == 0 && allAlbumsInBaseDirectory.count == index + 1 {
+                        tempAlbumItems.append(album)
                         separateAllAlbums.append(tempAlbumItems)
                     } else if promotionAreasIndex.count == 0 {
                         tempAlbumItems.append(album)

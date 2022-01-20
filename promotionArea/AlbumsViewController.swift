@@ -196,10 +196,10 @@ extension AlbumsViewController {
     func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<String, AlbumItem> {
         var snapshot = NSDiffableDataSourceSnapshot<String, AlbumItem>()
         let allAlbumsInBaseDirectory = albumsInBaseDirectory() + albumsInBaseDirectory() + albumsInBaseDirectory() + albumsInBaseDirectory()
-        let promotionAreas = [promotionArea(type: "category", name: "game", index:0),
-                              promotionArea(type: "banner", name: "music", index:8),
-                              promotionArea(type: "banner", name: "music", index:12),
-                              promotionArea(type: "category", name: "music", index:14),]
+        let promotionAreas = [PromotionArea(type: "category", name: "game", index:0),
+                              PromotionArea(type: "banner", name: "music", index:8),
+                              PromotionArea(type: "banner", name: "music", index:12),
+                              PromotionArea(type: "category", name: "music", index:14),]
         var promotionAreasIndex: [Int] = []
         promotionAreas.forEach { promotionAreasIndex.append($0.index)}
         var separateAllAlbums:[[AlbumItem]] = []
@@ -342,10 +342,4 @@ extension FileManager {
             thumbnailURL: URL(fileURLWithPath: "\(components.path)thumbs/\(fileURL.lastPathComponent)")
         )}
     }
-}
-
-struct promotionArea {
-    let type: String
-    let name: String
-    let index: Int
 }

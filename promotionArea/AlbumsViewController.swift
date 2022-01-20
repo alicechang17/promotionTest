@@ -17,7 +17,7 @@ class AlbumsViewController: UIViewController, UICollectionViewDelegate {
     }
     
     var selectSection: [Section] = []
-    var dataSource: UICollectionViewDiffableDataSource<Int, AlbumItem>! = nil
+    var dataSource: UICollectionViewDiffableDataSource<String, AlbumItem>! = nil
     var albumsCollectionView: UICollectionView! = nil
     
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ extension AlbumsViewController {
     
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource
-        <Int, AlbumItem>(collectionView: albumsCollectionView) {
+        <String, AlbumItem>(collectionView: albumsCollectionView) {
             (collectionView: UICollectionView, indexPath: IndexPath, albumItem: AlbumItem) -> UICollectionViewCell? in
             
             let sectionType = self.selectSection[indexPath.section]
@@ -193,8 +193,8 @@ extension AlbumsViewController {
         return section
     }
     
-    func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<Int, AlbumItem> {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, AlbumItem>()
+    func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<String, AlbumItem> {
+        var snapshot = NSDiffableDataSourceSnapshot<String, AlbumItem>()
         let allAlbumsInBaseDirectory = albumsInBaseDirectory() + albumsInBaseDirectory() + albumsInBaseDirectory() + albumsInBaseDirectory()
         let promotionAreas = [promotionArea(type: "category", name: "game", index:0),
                               promotionArea(type: "banner", name: "music", index:8),
@@ -207,7 +207,7 @@ extension AlbumsViewController {
         
         if promotionAreas.count == 0 {
             selectSection.append(Section.myAlbums)
-            snapshot.appendSections([0])
+            snapshot.appendSections([UUID().uuidString])
             snapshot.appendItems(allAlbumsInBaseDirectory)
         } else {
             setUpSeparateAllAlbums()
@@ -246,11 +246,11 @@ extension AlbumsViewController {
                 if index < promotionAreas.count {
                     if promotionAreas[index].type == "category" {
                         selectSection.append(Section.sharedAlbums)
-                        snapshot.appendSections([index+100])
+                        snapshot.appendSections([UUID().uuidString])
                         snapshot.appendItems(albumsInBaseDirectory())
                     } else if promotionAreas[index].type == "banner"{
                         selectSection.append(Section.featuredAlbums)
-                        snapshot.appendSections([index+200])
+                        snapshot.appendSections([UUID().uuidString])
                         snapshot.appendItems(albumsInBaseDirectory())
                     }
                 }
@@ -258,7 +258,7 @@ extension AlbumsViewController {
             
             func addMyAlbums(index: Int) {
                 selectSection.append(Section.myAlbums)
-                snapshot.appendSections([index+10])
+                snapshot.appendSections([UUID().uuidString])
                 snapshot.appendItems(separateAllAlbums[index])
             }
         }
